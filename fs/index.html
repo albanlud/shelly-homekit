@@ -291,7 +291,7 @@ document.getElementById("wifi_save_btn").onclick = function() {
   axios.post(host + "/rpc/Config.Set", data).then(function(res) {
     document.body.innerHTML =
       "<div class='container'><h1>Rebooting...</h1>" +
-      "<p>Device is rebooting and connecting to " + wifiSSID.value + "." +
+      "<p>Alban Device is rebooting and connecting to " + wifiSSID.value + "." +
       "<p>Connect to the same network and visit " +
       "<a href='http://" + document.getElementById("device_id").innerText + ".local/'>" +
       document.getElementById("device_id").innerText + ".local.</a></div>.";
