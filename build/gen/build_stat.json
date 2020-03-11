@@ -2,5 +2,5 @@
   "arch": "esp8266",
   "platform": "esp8266",
   "app_name": "switch1pm",
-  "build_time_ms": 11897
+  "build_time_ms": 17231
 }
