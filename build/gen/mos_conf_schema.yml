@@ -1,0 +1,464 @@
+- - debug.mbedtls_level
+  - i
+  - 1
+  - title: mbedTLS debug level
+- - device
+  - o
+  - title: Device settings
+- - device.id
+  - s
+  - title: Device ID
+- - device.license
+  - s
+  - title: License code
+- - device.mac
+  - s
+  - ""
+  - title: user/custom defined mac address
+- - device.public_key
+  - s
+  - ""
+  - title: Key for the restricted access
+- - device.sn
+  - s
+  - ""
+  - title: Serial number
+- - debug
+  - o
+  - title: Debug Settings
+- - debug.level
+  - i
+  - 2
+  - title: Debug Level
+- - debug.file_level
+  - s
+  - ""
+  - title: 'Log file level specification: file=level,file=level,...; see cs_log_set_file_level()'
+- - debug.event_level
+  - i
+  - 2
+  - title: Max level for which a MGOS_EVENT_LOG is raised
+- - debug.stdout_uart
+  - i
+  - 0
+  - title: STDOUT UART (-1 to disable)
+- - debug.stderr_uart
+  - i
+  - 0
+  - title: STDERR UART (-1 to disable)
+- - debug.factory_reset_gpio
+  - i
+  - -1
+  - title: Factory reset GPIO (low on boot)
+- - debug.mg_mgr_hexdump_file
+  - s
+  - title: File name to hexdump network traffic to. Use '-' for stdout, '--' for stderr.
+- - sys
+  - o
+  - title: System settings
+- - sys.tz_spec
+  - s
+  - ""
+  - title: 'See formats for the TZ env var: "man tzset". Formats like ":/path/to/file"
+      are not supported'
+- - sys.wdt_timeout
+  - i
+  - 30
+  - title: Watchdog timeout (seconds)
+- - sys.pref_ota_lib
+  - s
+  - title: Preferred ota lib, e.g. dash, ota-http-client
+- - conf_acl
+  - s
+  - '*'
+  - title: Conf ACL
+- - device.id
+  - esp8266_??????
+- - dns_sd
+  - o
+  - title: DNS-SD service discovery
+- - dns_sd.enable
+  - b
+  - false
+  - title: Enable service discovery
+- - dns_sd.host_name
+  - s
+  - mOS-??????
+  - title: DNS-SD host name. '?' chars will be expanded with MAC address hex digits.
+      If not set, uses device.id
+- - dns_sd.txt
+  - s
+  - ""
+  - title: Extra comma-separated key=value pairs to put into the TXT service record
+- - dns_sd.ttl
+  - i
+  - 120
+  - title: Time-to-live in seconds
+- - dns_sd.host_name
+  - mOS-esp8266-??????
+- - dns_sd.enable
+  - true
+- - dns_sd.host_name
+  - ""
+- - hap
+  - o
+  - title: HAP settings
+- - hap.salt
+  - s
+  - ""
+  - title: Device verifier salt
+- - hap.verifier
+  - s
+  - ""
+  - title: Device verifier
+- - http
+  - o
+  - title: HTTP Server
+- - http.enable
+  - b
+  - true
+  - title: Enable HTTP Server
+- - http.listen_addr
+  - s
+  - "80"
+  - title: Listening port / address
+- - http.document_root
+  - s
+  - /
+  - title: Root for serving files. Setting to empty disables file serving.
+- - http.index_files
+  - s
+  - ""
+  - title: Comma-separated list of index files
+- - http.ssl_cert
+  - s
+  - title: Turn on SSL on the listener, use this cert
+- - http.ssl_key
+  - s
+  - title: SSL key to use
+- - http.ssl_ca_cert
+  - s
+  - title: Verify clients this CA bundle
+- - http.upload_acl
+  - s
+  - '*'
+  - title: Upload file ACL
+- - http.hidden_files
+  - s
+  - title: Hidden file pattern
+- - http.auth_domain
+  - s
+  - title: Enable authentication of all HTTP requests
+- - http.auth_file
+  - s
+  - title: Password file to use for auth
+- - update
+  - o
+  - title: Firmware updater
+- - update.timeout
+  - i
+  - 600
+  - title: Update will be aborted if it does not finish within this time
+- - update.commit_timeout
+  - i
+  - title: After applying update, wait for commit up to this long
+- - update.url
+  - s
+  - title: Fetch updates from here
+- - update.interval
+  - i
+  - title: Check for updates this often
+- - update.extra_http_headers
+  - s
+  - title: Extra HTTP request headers
+- - update.ssl_ca_file
+  - s
+  - ca.pem
+  - title: TLS CA file
+- - update.ssl_client_cert_file
+  - s
+  - title: TLS client cert file
+- - update.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - update.enable_post
+  - b
+  - true
+  - title: Enable POST updates
+- - rpc
+  - o
+  - title: RPC settings
+- - rpc.enable
+  - b
+  - true
+  - title: Enable RPC
+- - rpc.max_frame_size
+  - i
+  - 4096
+  - title: Max Frame Size
+- - rpc.max_queue_length
+  - i
+  - 25
+  - title: Max Queue Length
+- - rpc.default_out_channel_idle_close_timeout
+  - i
+  - 10
+  - title: Default idle close timeout for outbound channels
+- - rpc.acl_file
+  - s
+  - title: File with RPC ACL JSON
+- - rpc.auth_domain
+  - s
+  - title: Realm to use for digest authentication
+- - rpc.auth_file
+  - s
+  - title: File with user credentials in the htdigest format
+- - rpc.uart
+  - o
+  - title: RPC-over-UART settings
+- - rpc.uart.uart_no
+  - i
+  - 0
+  - title: UART number (-1 to disable)
+- - rpc.uart.baud_rate
+  - i
+  - 115200
+  - title: Baud rate
+- - rpc.uart.fc_type
+  - i
+  - 2
+  - title: 'Flow control: 0 - none, 1 - CTS/RTS, 2 - XON/XOFF'
+- - rpc.uart.dst
+  - s
+  - ""
+  - title: Destination reachable via this channel
+- - rpc.ws
+  - o
+  - title: RPC over WebSocket settings
+- - rpc.ws.enable
+  - b
+  - true
+  - title: Enable RPC over WebSocket
+- - rpc.ws.server_address
+  - s
+  - ""
+  - title: Cloud server address
+- - rpc.ws.reconnect_interval_min
+  - i
+  - 1
+  - title: Minimal reconnect interval
+- - rpc.ws.reconnect_interval_max
+  - i
+  - 60
+  - title: Maximal reconnect interval
+- - rpc.ws.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - rpc.ws.ssl_cert
+  - s
+  - title: TLS client cert file
+- - rpc.ws.ssl_key
+  - s
+  - title: TLS client key file
+- - rpc.ws.ssl_ca_cert
+  - s
+  - title: TLS CA file
+- - wifi
+  - o
+  - hide: true
+- - wifi.ap
+  - o
+  - title: WiFi Access Point Config
+- - wifi.ap.enable
+  - b
+  - true
+  - title: Enable
+- - wifi.ap.ssid
+  - s
+  - Mongoose_??????
+  - title: SSID
+- - wifi.ap.pass
+  - s
+  - Mongoose
+  - title: Password
+    type: password
+- - wifi.ap.hidden
+  - b
+  - false
+  - title: Hide SSID
+- - wifi.ap.channel
+  - i
+  - 6
+  - title: Channel
+- - wifi.ap.max_connections
+  - i
+  - 10
+  - title: Max connections
+- - wifi.ap.ip
+  - s
+  - 192.168.4.1
+  - title: IP address
+- - wifi.ap.netmask
+  - s
+  - 255.255.255.0
+  - title: Network Mask
+- - wifi.ap.gw
+  - s
+  - 192.168.4.1
+  - title: Default Gateway
+- - wifi.ap.dhcp_start
+  - s
+  - 192.168.4.2
+  - title: DHCP Start Address
+- - wifi.ap.dhcp_end
+  - s
+  - 192.168.4.100
+  - title: DHCP End Address
+- - wifi.ap.trigger_on_gpio
+  - i
+  - -1
+  - title: Trigger AP on low GPIO
+- - wifi.ap.disable_after
+  - i
+  - 0
+  - title: If > 0, will disable itself after the specified number of seconds
+- - wifi.ap.hostname
+  - s
+  - ""
+  - title: If not empty, DNS server will resolve given host name to the IP address
+      of AP
+- - wifi.sta
+  - o
+  - title: WiFi Station Config
+- - wifi.sta.enable
+  - b
+  - title: Connect to existing WiFi
+- - wifi.sta.ssid
+  - s
+  - title: SSID
+- - wifi.sta.pass
+  - s
+  - title: Password
+    type: password
+- - wifi.sta.user
+  - s
+  - title: Username for WPA-PEAP mode
+- - wifi.sta.anon_identity
+  - s
+  - title: Anonymous identity for WPA mode
+- - wifi.sta.cert
+  - s
+  - title: Client certificate for WPA-TTLS mode
+- - wifi.sta.key
+  - s
+  - title: Client key for WPA-TTLS mode
+- - wifi.sta.ca_cert
+  - s
+  - title: CA certificate for WPA-enterprise mode
+- - wifi.sta.ip
+  - s
+  - title: Static IP Address
+- - wifi.sta.netmask
+  - s
+  - title: Static Netmask
+- - wifi.sta.gw
+  - s
+  - title: Static Default Gateway
+- - wifi.sta.nameserver
+  - s
+  - title: DNS Server
+- - wifi.sta.dhcp_hostname
+  - s
+  - title: Host name to include in DHCP requests
+- - wifi.sta1
+  - wifi.sta
+  - title: WiFi Station Config 1
+- - wifi.sta1.enable
+  - false
+- - wifi.sta2
+  - wifi.sta
+  - title: WiFi Station Config 2
+- - wifi.sta2.enable
+  - false
+- - wifi.sta_cfg_idx
+  - i
+  - 0
+  - title: WiFi station config index to use, 0, 1 or 2
+- - wifi.sta_connect_timeout
+  - i
+  - 30
+  - title: Timeout for connection, seconds
+- - wifi.ap.keep_enabled
+  - b
+  - true
+  - title: Keep AP enabled when station is on
+- - device.sn
+  - "000000"
+- - http.index_files
+  - index.html,index.html.gz
+- - sw
+  - o
+  - Switch settings: null
+- - sw.id
+  - i
+  - 0
+  - ID of the switch: null
+- - sw.name
+  - s
+  - ""
+  - Name of the switch: null
+- - sw.enable
+  - b
+  - true
+  - Enable this switch in the accessory: null
+- - sw.out_gpio
+  - i
+  - -1
+  - Output pin: null
+- - sw.out_on_value
+  - i
+  - 1
+  - Active (ON) output for gpio, 1 or 0: null
+- - sw.in_gpio
+  - i
+  - -1
+  - Input sensing pin: null
+- - sw.in_mode
+  - i
+  - 1
+  - 0 - Momentary, 1 - Toggle, 2 - Edge, 3 - Detached: null
+- - sw.state
+  - b
+  - false
+  - State of the switch: null
+- - sw.persist_state
+  - b
+  - false
+  - Whether state of the switch should be persisted across reboots.: null
+- - device.id
+  - shelly1pm-??????
+- - wifi.ap.ssid
+  - shelly1pm-??????
+- - sw1
+  - sw
+  - title: SW settings
+- - sw1.id
+  - 0
+- - sw1.name
+  - Shelly SW
+- - sw1.out_gpio
+  - 15
+- - sw1.in_gpio
+  - 4
+- - wifi.ap.pass
+  - ""
+- - wifi.ap.keep_enabled
+  - false
+- - wifi.ap.ip
+  - 192.168.33.1
+- - wifi.ap.gw
+  - ""
+- - wifi.ap.dhcp_start
+  - 192.168.33.2
+- - wifi.ap.dhcp_end
+  - 192.168.33.100

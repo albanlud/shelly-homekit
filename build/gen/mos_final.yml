@@ -1,0 +1,1059 @@
+name: switch1pm
+type: app
+version: 1.4.0
+platform: esp8266
+platforms:
+- esp32
+- esp8266
+author: Deomid "rojer" Ryabkov
+description: A HomeKit firmware for Shelly switches
+sources:
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/src/shelly_main.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/src/shelly_sw_service.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/build/gen/mgos_deps_init.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/mgos_vfs.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/mgos_vfs_dev.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/mgos_vfs_internal.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/esp8266/esp_flash_writer.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/esp8266/esp_fs.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs/lfs.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs/lfs_util.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs1/lfs1.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/core/src/mgos_core.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/core/src/esp8266/esp_rboot.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd/src/lwip/lwip_mdns.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd/src/mongoose/mgos_dns_sd.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd/src/mongoose/mgos_mdns.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessory+Info.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessoryServer+Reset.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessoryServer.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessorySetup.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessorySetupInfo.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessoryValidation.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEAccessoryServer+Advertising.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEAccessoryServer+Broadcast.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEAccessoryServer.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic+Broadcast.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic+Configuration.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic+Signature.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristicParseAndWriteValue.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristicReadAndSerializeValue.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEPDU+TLV.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEPDU.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEPeripheralManager.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEProcedure.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEProtocol+Configuration.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEService+Signature.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLESession.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLETransaction.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBitSet.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPCharacteristic.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPCharacteristicTypes.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPDeviceID.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIP+ByteBuffer.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPAccessory.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPAccessoryProtocol.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPAccessoryServer.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPCharacteristic.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPSecurityProtocol.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPServiceDiscovery.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPJSONUtils.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPLegacyImport.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPMACAddress.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPMFiHWAuth.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPMFiTokenAuth.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPDU.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairing.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingBLESessionCache.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingPairSetup.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingPairVerify.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingPairings.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers+AccessoryInformation.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers+HAPProtocolInformation.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers+Pairing.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPServiceTypes.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPSession.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPStringBuilder.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLV.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLVMemory.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLVReader.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLVWriter.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPUUID.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPVersion.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPAssert.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Crypto.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Double.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Float.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Int.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+MACAddress.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+RawBuffer.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Sha1Checksum.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+String.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+UTF8.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPLog.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPPlatformSystemInit.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/Crypto/MbedTLS/HAPMbedTLS.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/External/Base64/util_base64.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/External/HTTP/util_http_reader.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/External/JSON/util_json_reader.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/mgos_homekit_adk.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/mgos_homekit_adk_db.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/mgos_homekit_adk_rpc_service.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatform.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformAbort.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformAccessorySetup.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformBLEPeripheralManager.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformClock.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformLog.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformMFiHWAuth.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformMFiTokenAuth.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformRandomNumber.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformServiceDiscovery.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformTCPStreamManager.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformTimer.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformKeyValueStore.cpp
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/http-server/src/mgos_http_server.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mg_rpc.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mg_rpc_channel.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mg_rpc_channel_http.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mgos_rpc.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-config/src/mgos_service_config.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-fs/src/mgos_service_fs.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-uart/src/mgos_rpc_channel_uart.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-ws/src/mgos_rpc_channel_ws.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-ws/src/mgos_rpc_ws.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/src/mgos_wifi.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/src/mjs_wifi.c
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/src/esp8266/esp_wifi.c
+includes:
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/mbedtls/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/mbedtls/include/esp8266
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/mbedtls/mbedtls/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/include/esp8266
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/mongoose/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-dev-part/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs1
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/include/spiffs
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/include/esp8266
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/core/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/core/include/esp8266
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/http-server/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/ota-common/src
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/ota-common/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/ota-common/include/esp8266
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/ota-http-client/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-config/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-fs/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-ota/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-uart/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-ws/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/include
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/include/esp8266
+filesystem:
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/fs/axios.min.js.gz
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/fs/index.html
+binary_libs:
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/build/objs/libmbedtls-esp8266-noatca-2.17.0.a
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/build/objs/libmongoose-esp8266-nossl-2.17.0.a
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/build/objs/libota-common-esp8266-2.17.0.a
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/build/objs/libota-http-client-esp8266-2.17.0.a
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/build/objs/libota-http-server-esp8266-2.17.0.a
+- /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/build/objs/librpc-service-ota-esp8266-2.17.0.a
+config_schema:
+- - debug.mbedtls_level
+  - i
+  - 1
+  - title: mbedTLS debug level
+- - device
+  - o
+  - title: Device settings
+- - device.id
+  - s
+  - title: Device ID
+- - device.license
+  - s
+  - title: License code
+- - device.mac
+  - s
+  - ""
+  - title: user/custom defined mac address
+- - device.public_key
+  - s
+  - ""
+  - title: Key for the restricted access
+- - device.sn
+  - s
+  - ""
+  - title: Serial number
+- - debug
+  - o
+  - title: Debug Settings
+- - debug.level
+  - i
+  - 2
+  - title: Debug Level
+- - debug.file_level
+  - s
+  - ""
+  - title: 'Log file level specification: file=level,file=level,...; see cs_log_set_file_level()'
+- - debug.event_level
+  - i
+  - 2
+  - title: Max level for which a MGOS_EVENT_LOG is raised
+- - debug.stdout_uart
+  - i
+  - 0
+  - title: STDOUT UART (-1 to disable)
+- - debug.stderr_uart
+  - i
+  - 0
+  - title: STDERR UART (-1 to disable)
+- - debug.factory_reset_gpio
+  - i
+  - -1
+  - title: Factory reset GPIO (low on boot)
+- - debug.mg_mgr_hexdump_file
+  - s
+  - title: File name to hexdump network traffic to. Use '-' for stdout, '--' for stderr.
+- - sys
+  - o
+  - title: System settings
+- - sys.tz_spec
+  - s
+  - ""
+  - title: 'See formats for the TZ env var: "man tzset". Formats like ":/path/to/file"
+      are not supported'
+- - sys.wdt_timeout
+  - i
+  - 30
+  - title: Watchdog timeout (seconds)
+- - sys.pref_ota_lib
+  - s
+  - title: Preferred ota lib, e.g. dash, ota-http-client
+- - conf_acl
+  - s
+  - '*'
+  - title: Conf ACL
+- - device.id
+  - esp8266_??????
+- - dns_sd
+  - o
+  - title: DNS-SD service discovery
+- - dns_sd.enable
+  - b
+  - false
+  - title: Enable service discovery
+- - dns_sd.host_name
+  - s
+  - mOS-??????
+  - title: DNS-SD host name. '?' chars will be expanded with MAC address hex digits.
+      If not set, uses device.id
+- - dns_sd.txt
+  - s
+  - ""
+  - title: Extra comma-separated key=value pairs to put into the TXT service record
+- - dns_sd.ttl
+  - i
+  - 120
+  - title: Time-to-live in seconds
+- - dns_sd.host_name
+  - mOS-esp8266-??????
+- - dns_sd.enable
+  - true
+- - dns_sd.host_name
+  - ""
+- - hap
+  - o
+  - title: HAP settings
+- - hap.salt
+  - s
+  - ""
+  - title: Device verifier salt
+- - hap.verifier
+  - s
+  - ""
+  - title: Device verifier
+- - http
+  - o
+  - title: HTTP Server
+- - http.enable
+  - b
+  - true
+  - title: Enable HTTP Server
+- - http.listen_addr
+  - s
+  - "80"
+  - title: Listening port / address
+- - http.document_root
+  - s
+  - /
+  - title: Root for serving files. Setting to empty disables file serving.
+- - http.index_files
+  - s
+  - ""
+  - title: Comma-separated list of index files
+- - http.ssl_cert
+  - s
+  - title: Turn on SSL on the listener, use this cert
+- - http.ssl_key
+  - s
+  - title: SSL key to use
+- - http.ssl_ca_cert
+  - s
+  - title: Verify clients this CA bundle
+- - http.upload_acl
+  - s
+  - '*'
+  - title: Upload file ACL
+- - http.hidden_files
+  - s
+  - title: Hidden file pattern
+- - http.auth_domain
+  - s
+  - title: Enable authentication of all HTTP requests
+- - http.auth_file
+  - s
+  - title: Password file to use for auth
+- - update
+  - o
+  - title: Firmware updater
+- - update.timeout
+  - i
+  - 600
+  - title: Update will be aborted if it does not finish within this time
+- - update.commit_timeout
+  - i
+  - title: After applying update, wait for commit up to this long
+- - update.url
+  - s
+  - title: Fetch updates from here
+- - update.interval
+  - i
+  - title: Check for updates this often
+- - update.extra_http_headers
+  - s
+  - title: Extra HTTP request headers
+- - update.ssl_ca_file
+  - s
+  - ca.pem
+  - title: TLS CA file
+- - update.ssl_client_cert_file
+  - s
+  - title: TLS client cert file
+- - update.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - update.enable_post
+  - b
+  - true
+  - title: Enable POST updates
+- - rpc
+  - o
+  - title: RPC settings
+- - rpc.enable
+  - b
+  - true
+  - title: Enable RPC
+- - rpc.max_frame_size
+  - i
+  - 4096
+  - title: Max Frame Size
+- - rpc.max_queue_length
+  - i
+  - 25
+  - title: Max Queue Length
+- - rpc.default_out_channel_idle_close_timeout
+  - i
+  - 10
+  - title: Default idle close timeout for outbound channels
+- - rpc.acl_file
+  - s
+  - title: File with RPC ACL JSON
+- - rpc.auth_domain
+  - s
+  - title: Realm to use for digest authentication
+- - rpc.auth_file
+  - s
+  - title: File with user credentials in the htdigest format
+- - rpc.uart
+  - o
+  - title: RPC-over-UART settings
+- - rpc.uart.uart_no
+  - i
+  - 0
+  - title: UART number (-1 to disable)
+- - rpc.uart.baud_rate
+  - i
+  - 115200
+  - title: Baud rate
+- - rpc.uart.fc_type
+  - i
+  - 2
+  - title: 'Flow control: 0 - none, 1 - CTS/RTS, 2 - XON/XOFF'
+- - rpc.uart.dst
+  - s
+  - ""
+  - title: Destination reachable via this channel
+- - rpc.ws
+  - o
+  - title: RPC over WebSocket settings
+- - rpc.ws.enable
+  - b
+  - true
+  - title: Enable RPC over WebSocket
+- - rpc.ws.server_address
+  - s
+  - ""
+  - title: Cloud server address
+- - rpc.ws.reconnect_interval_min
+  - i
+  - 1
+  - title: Minimal reconnect interval
+- - rpc.ws.reconnect_interval_max
+  - i
+  - 60
+  - title: Maximal reconnect interval
+- - rpc.ws.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - rpc.ws.ssl_cert
+  - s
+  - title: TLS client cert file
+- - rpc.ws.ssl_key
+  - s
+  - title: TLS client key file
+- - rpc.ws.ssl_ca_cert
+  - s
+  - title: TLS CA file
+- - wifi
+  - o
+  - hide: true
+- - wifi.ap
+  - o
+  - title: WiFi Access Point Config
+- - wifi.ap.enable
+  - b
+  - true
+  - title: Enable
+- - wifi.ap.ssid
+  - s
+  - Mongoose_??????
+  - title: SSID
+- - wifi.ap.pass
+  - s
+  - Mongoose
+  - title: Password
+    type: password
+- - wifi.ap.hidden
+  - b
+  - false
+  - title: Hide SSID
+- - wifi.ap.channel
+  - i
+  - 6
+  - title: Channel
+- - wifi.ap.max_connections
+  - i
+  - 10
+  - title: Max connections
+- - wifi.ap.ip
+  - s
+  - 192.168.4.1
+  - title: IP address
+- - wifi.ap.netmask
+  - s
+  - 255.255.255.0
+  - title: Network Mask
+- - wifi.ap.gw
+  - s
+  - 192.168.4.1
+  - title: Default Gateway
+- - wifi.ap.dhcp_start
+  - s
+  - 192.168.4.2
+  - title: DHCP Start Address
+- - wifi.ap.dhcp_end
+  - s
+  - 192.168.4.100
+  - title: DHCP End Address
+- - wifi.ap.trigger_on_gpio
+  - i
+  - -1
+  - title: Trigger AP on low GPIO
+- - wifi.ap.disable_after
+  - i
+  - 0
+  - title: If > 0, will disable itself after the specified number of seconds
+- - wifi.ap.hostname
+  - s
+  - ""
+  - title: If not empty, DNS server will resolve given host name to the IP address
+      of AP
+- - wifi.sta
+  - o
+  - title: WiFi Station Config
+- - wifi.sta.enable
+  - b
+  - title: Connect to existing WiFi
+- - wifi.sta.ssid
+  - s
+  - title: SSID
+- - wifi.sta.pass
+  - s
+  - title: Password
+    type: password
+- - wifi.sta.user
+  - s
+  - title: Username for WPA-PEAP mode
+- - wifi.sta.anon_identity
+  - s
+  - title: Anonymous identity for WPA mode
+- - wifi.sta.cert
+  - s
+  - title: Client certificate for WPA-TTLS mode
+- - wifi.sta.key
+  - s
+  - title: Client key for WPA-TTLS mode
+- - wifi.sta.ca_cert
+  - s
+  - title: CA certificate for WPA-enterprise mode
+- - wifi.sta.ip
+  - s
+  - title: Static IP Address
+- - wifi.sta.netmask
+  - s
+  - title: Static Netmask
+- - wifi.sta.gw
+  - s
+  - title: Static Default Gateway
+- - wifi.sta.nameserver
+  - s
+  - title: DNS Server
+- - wifi.sta.dhcp_hostname
+  - s
+  - title: Host name to include in DHCP requests
+- - wifi.sta1
+  - wifi.sta
+  - title: WiFi Station Config 1
+- - wifi.sta1.enable
+  - false
+- - wifi.sta2
+  - wifi.sta
+  - title: WiFi Station Config 2
+- - wifi.sta2.enable
+  - false
+- - wifi.sta_cfg_idx
+  - i
+  - 0
+  - title: WiFi station config index to use, 0, 1 or 2
+- - wifi.sta_connect_timeout
+  - i
+  - 30
+  - title: Timeout for connection, seconds
+- - wifi.ap.keep_enabled
+  - b
+  - true
+  - title: Keep AP enabled when station is on
+- - device.sn
+  - "000000"
+- - http.index_files
+  - index.html,index.html.gz
+- - sw
+  - o
+  - Switch settings: null
+- - sw.id
+  - i
+  - 0
+  - ID of the switch: null
+- - sw.name
+  - s
+  - ""
+  - Name of the switch: null
+- - sw.enable
+  - b
+  - true
+  - Enable this switch in the accessory: null
+- - sw.out_gpio
+  - i
+  - -1
+  - Output pin: null
+- - sw.out_on_value
+  - i
+  - 1
+  - Active (ON) output for gpio, 1 or 0: null
+- - sw.in_gpio
+  - i
+  - -1
+  - Input sensing pin: null
+- - sw.in_mode
+  - i
+  - 1
+  - 0 - Momentary, 1 - Toggle, 2 - Edge, 3 - Detached: null
+- - sw.state
+  - b
+  - false
+  - State of the switch: null
+- - sw.persist_state
+  - b
+  - false
+  - Whether state of the switch should be persisted across reboots.: null
+- - device.id
+  - shelly1pm-??????
+- - wifi.ap.ssid
+  - shelly1pm-??????
+- - sw1
+  - sw
+  - title: SW settings
+- - sw1.id
+  - 0
+- - sw1.name
+  - Shelly SW
+- - sw1.out_gpio
+  - 15
+- - sw1.in_gpio
+  - 4
+- - wifi.ap.pass
+  - ""
+- - wifi.ap.keep_enabled
+  - false
+- - wifi.ap.ip
+  - 192.168.33.1
+- - wifi.ap.gw
+  - ""
+- - wifi.ap.dhcp_start
+  - 192.168.33.2
+- - wifi.ap.dhcp_end
+  - 192.168.33.100
+build_vars:
+  BOARD: ""
+  BOOT_CONFIG_ADDR: "0x1000"
+  FLASH_SIZE: "2097152"
+  FS_SIZE: "262144"
+  MGOS: "1"
+  MGOS_HAP_SIMPLE_CONFIG: "1"
+  MGOS_HAVE_CORE: "1"
+  MGOS_HAVE_DNS_SD: "1"
+  MGOS_HAVE_HOMEKIT_ADK: "1"
+  MGOS_HAVE_HTTP_SERVER: "1"
+  MGOS_HAVE_MBEDTLS: "1"
+  MGOS_HAVE_MONGOOSE: "1"
+  MGOS_HAVE_OTA_COMMON: "1"
+  MGOS_HAVE_OTA_HTTP_CLIENT: "1"
+  MGOS_HAVE_OTA_HTTP_SERVER: "1"
+  MGOS_HAVE_RPC_COMMON: "1"
+  MGOS_HAVE_RPC_SERVICE_CONFIG: "1"
+  MGOS_HAVE_RPC_SERVICE_FS: "1"
+  MGOS_HAVE_RPC_SERVICE_OTA: "1"
+  MGOS_HAVE_RPC_UART: "1"
+  MGOS_HAVE_RPC_WS: "1"
+  MGOS_HAVE_VFS_COMMON: "1"
+  MGOS_HAVE_VFS_DEV_PART: "1"
+  MGOS_HAVE_VFS_FS_LFS: "1"
+  MGOS_HAVE_VFS_FS_SPIFFS: "1"
+  MGOS_HAVE_WIFI: "1"
+  MGOS_MBEDTLS_ENABLE_ATCA: "0"
+  MGOS_ROOT_FS_OPTS_LFS: '{"bs":4096,"is":128}'
+  MGOS_ROOT_FS_OPTS_SPIFFS: '{"bs":4096,"ps":256,"es":4096}'
+  MGOS_ROOT_FS_TYPE: SPIFFS
+  MGOS_WIFI_ENABLE_AP_STA: "0"
+  MODEL: Shelly1PM
+cflags:
+- -Wno-format
+cdefs:
+  BTN_GPIO: "-1"
+  HAP_DISABLE_ASSERTS: "1"
+  HAP_DISABLE_PRECONDITIONS: "1"
+  HAP_IDENTIFICATION: \"https://github.com/mongoose-os-libs/homekit-adk\"
+  LED_GPIO: "-1"
+  LFS_NO_DEBUG: "1"
+  MBEDTLS_FREE_CERT_CHAIN: "1"
+  MBEDTLS_USER_CONFIG_FILE: \"mbedtls_platform_config.h\"
+  MBEDTLS_X509_CA_CHAIN_ON_DISK: "1"
+  MG_ENABLE_DNS: "1"
+  MG_ENABLE_DNS_SERVER: "1"
+  MG_ENABLE_MQTT: "1"
+  MG_ENABLE_SNTP: "1"
+  MG_ENABLE_SSL: "0"
+  MG_SSL_IF: MG_SSL_IF_MBEDTLS
+  MG_SSL_IF_MBEDTLS_FREE_CERTS: "1"
+  MGOS: "1"
+  MGOS_DNS_SD_HIDE_ADDITIONAL_INFO: "0"
+  MGOS_ENABLE_FILE_UPLOAD: "1"
+  MGOS_ENABLE_RPC_CHANNEL_HTTP: "1"
+  MGOS_ENABLE_SYS_SERVICE: "1"
+  MGOS_ENABLE_WEB_CONFIG: "0"
+  MGOS_ESP8266_WIFI_ENABLE_WPAENT: "0"
+  MGOS_HAP_SIMPLE_CONFIG: "1"
+  MGOS_HAVE_CORE: "1"
+  MGOS_HAVE_DNS_SD: "1"
+  MGOS_HAVE_HOMEKIT_ADK: "1"
+  MGOS_HAVE_HTTP_SERVER: "1"
+  MGOS_HAVE_MBEDTLS: "1"
+  MGOS_HAVE_MONGOOSE: "1"
+  MGOS_HAVE_OTA_COMMON: "1"
+  MGOS_HAVE_OTA_HTTP_CLIENT: "1"
+  MGOS_HAVE_OTA_HTTP_SERVER: "1"
+  MGOS_HAVE_RPC_COMMON: "1"
+  MGOS_HAVE_RPC_SERVICE_CONFIG: "1"
+  MGOS_HAVE_RPC_SERVICE_FS: "1"
+  MGOS_HAVE_RPC_SERVICE_OTA: "1"
+  MGOS_HAVE_RPC_UART: "1"
+  MGOS_HAVE_RPC_WS: "1"
+  MGOS_HAVE_VFS_COMMON: "1"
+  MGOS_HAVE_VFS_DEV_PART: "1"
+  MGOS_HAVE_VFS_FS_LFS: "1"
+  MGOS_HAVE_VFS_FS_SPIFFS: "1"
+  MGOS_HAVE_WIFI: "1"
+  MGOS_LFS1_COMPAT: "0"
+  MGOS_ROOT_FS_OPTS_LFS: '{"bs":4096,"is":128}'
+  MGOS_ROOT_FS_OPTS_SPIFFS: '{"bs":4096,"ps":256,"es":4096}'
+  MGOS_WIFI_ENABLE_AP_STA: "1"
+  NUM_SWITCHES: "1"
+  PRODUCT_HW_REV: '"1.0"'
+  PRODUCT_MODEL: '"Shelly1PM"'
+  PRODUCT_VENDOR: '"Allterco"'
+  SERVICE_NAME: '"Switch"'
+libs_version: 2.17.0
+modules_version: 2.17.0
+mongoose_os_version: 2.17.0
+manifest_version: "2020-01-29"
+libs_handled:
+- lib:
+    origin: https://github.com/mongoose-os-libs/mbedtls
+    location: https://github.com/mongoose-os-libs/mbedtls
+    name: mbedtls
+    variant: esp8266-noatca
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/mbedtls
+- lib:
+    origin: https://github.com/mongoose-os-libs/vfs-common
+    location: https://github.com/mongoose-os-libs/vfs-common
+    name: vfs-common
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/mgos_vfs.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/mgos_vfs_dev.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/mgos_vfs_internal.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/esp8266/esp_flash_writer.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/esp8266/esp_fs.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/mongoose
+    location: https://github.com/mongoose-os-libs/mongoose
+    name: mongoose
+    variant: esp8266-nossl
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/mongoose
+- lib:
+    origin: https://github.com/mongoose-os-libs/vfs-dev-part
+    location: https://github.com/mongoose-os-libs/vfs-dev-part
+    name: vfs-dev-part
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-dev-part
+  init_deps:
+  - vfs-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/vfs-fs-lfs
+    location: https://github.com/mongoose-os-libs/vfs-fs-lfs
+    name: vfs-fs-lfs
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs
+  init_deps:
+  - vfs-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs/lfs.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs/lfs_util.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs1/lfs1.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/vfs-fs-spiffs
+    location: https://github.com/mongoose-os-libs/vfs-fs-spiffs
+    name: vfs-fs-spiffs
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs
+  init_deps:
+  - vfs-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/core
+    location: https://github.com/mongoose-os-libs/core
+    name: core
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/core
+  init_deps:
+  - mongoose
+  - ota-common
+  - vfs-common
+  - vfs-dev-part
+  - vfs-fs-lfs
+  - vfs-fs-spiffs
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/core/src/mgos_core.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/core/src/esp8266/esp_rboot.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/dns-sd
+    location: https://github.com/mongoose-os-libs/dns-sd
+    name: dns-sd
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd
+  init_deps:
+  - core
+  - mongoose
+  - wifi
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd/src/lwip/lwip_mdns.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd/src/mongoose/mgos_dns_sd.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/dns-sd/src/mongoose/mgos_mdns.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/homekit-adk
+    location: https://github.com/mongoose-os-libs/homekit-adk
+    name: homekit-adk
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk
+  init_deps:
+  - core
+  - dns-sd
+  - mbedtls
+  - rpc-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessory+Info.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessoryServer+Reset.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessoryServer.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessorySetup.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessorySetupInfo.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPAccessoryValidation.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEAccessoryServer+Advertising.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEAccessoryServer+Broadcast.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEAccessoryServer.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic+Broadcast.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic+Configuration.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic+Signature.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristic.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristicParseAndWriteValue.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLECharacteristicReadAndSerializeValue.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEPDU+TLV.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEPDU.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEPeripheralManager.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEProcedure.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEProtocol+Configuration.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLEService+Signature.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLESession.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBLETransaction.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPBitSet.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPCharacteristic.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPCharacteristicTypes.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPDeviceID.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIP+ByteBuffer.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPAccessory.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPAccessoryProtocol.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPAccessoryServer.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPCharacteristic.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPSecurityProtocol.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPIPServiceDiscovery.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPJSONUtils.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPLegacyImport.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPMACAddress.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPMFiHWAuth.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPMFiTokenAuth.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPDU.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairing.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingBLESessionCache.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingPairSetup.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingPairVerify.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPPairingPairings.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers+AccessoryInformation.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers+HAPProtocolInformation.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers+Pairing.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPRequestHandlers.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPServiceTypes.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPSession.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPStringBuilder.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLV.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLVMemory.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLVReader.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPTLVWriter.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPUUID.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/HAP/HAPVersion.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPAssert.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Crypto.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Double.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Float.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Int.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+MACAddress.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+RawBuffer.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+Sha1Checksum.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+String.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPBase+UTF8.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPLog.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/HAPPlatformSystemInit.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/PAL/Crypto/MbedTLS/HAPMbedTLS.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/External/Base64/util_base64.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/External/HTTP/util_http_reader.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/HomeKitADK/External/JSON/util_json_reader.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/mgos_homekit_adk.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/mgos_homekit_adk_db.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/mgos_homekit_adk_rpc_service.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatform.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformAbort.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformAccessorySetup.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformBLEPeripheralManager.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformClock.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformLog.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformMFiHWAuth.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformMFiTokenAuth.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformRandomNumber.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformServiceDiscovery.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformTCPStreamManager.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformTimer.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/homekit-adk/src/PAL/HAPPlatformKeyValueStore.cpp
+- lib:
+    origin: https://github.com/mongoose-os-libs/http-server
+    location: https://github.com/mongoose-os-libs/http-server
+    name: http-server
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/http-server
+  init_deps:
+  - core
+  - wifi
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/http-server/src/mgos_http_server.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/ota-common
+    location: https://github.com/mongoose-os-libs/ota-common
+    name: ota-common
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/ota-common
+- lib:
+    origin: https://github.com/mongoose-os-libs/ota-http-client
+    location: https://github.com/mongoose-os-libs/ota-http-client
+    name: ota-http-client
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/ota-http-client
+  init_deps:
+  - core
+  - ota-common
+- lib:
+    origin: https://github.com/mongoose-os-libs/ota-http-server
+    location: https://github.com/mongoose-os-libs/ota-http-server
+    name: ota-http-server
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/ota-http-server
+  init_deps:
+  - core
+  - http-server
+  - ota-common
+  - ota-http-client
+- lib:
+    origin: https://github.com/mongoose-os-libs/rpc-common
+    location: https://github.com/mongoose-os-libs/rpc-common
+    name: rpc-common
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common
+  init_deps:
+  - core
+  - http-server
+  - mongoose
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mg_rpc.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mg_rpc_channel.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mg_rpc_channel_http.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-common/src/mgos_rpc.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/rpc-service-config
+    location: https://github.com/mongoose-os-libs/rpc-service-config
+    name: rpc-service-config
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-config
+  init_deps:
+  - core
+  - rpc-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-config/src/mgos_service_config.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/rpc-service-fs
+    location: https://github.com/mongoose-os-libs/rpc-service-fs
+    name: rpc-service-fs
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-fs
+  init_deps:
+  - core
+  - rpc-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-fs/src/mgos_service_fs.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/rpc-service-ota
+    location: https://github.com/mongoose-os-libs/rpc-service-ota
+    name: rpc-service-ota
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-service-ota
+  init_deps:
+  - core
+  - ota-http-client
+  - rpc-common
+- lib:
+    origin: https://github.com/mongoose-os-libs/rpc-uart
+    location: https://github.com/mongoose-os-libs/rpc-uart
+    name: rpc-uart
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-uart
+  init_deps:
+  - core
+  - rpc-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-uart/src/mgos_rpc_channel_uart.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/rpc-ws
+    location: https://github.com/mongoose-os-libs/rpc-ws
+    name: rpc-ws
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-ws
+  init_deps:
+  - core
+  - http-server
+  - rpc-common
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-ws/src/mgos_rpc_channel_ws.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/rpc-ws/src/mgos_rpc_ws.c
+- lib:
+    origin: https://github.com/mongoose-os-libs/wifi
+    location: https://github.com/mongoose-os-libs/wifi
+    name: wifi
+  path: /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi
+  init_deps:
+  - core
+  sources:
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/src/mgos_wifi.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/src/mjs_wifi.c
+  - /data/fwbuild-volumes/2.17.0/apps/switch1pm/esp8266/build_contexts/build_ctx_344975149/deps/wifi/src/esp8266/esp_wifi.c
+init_deps:
+- mongoose
+- ota-common
+- vfs-common
+- vfs-dev-part
+- vfs-fs-lfs
+- vfs-fs-spiffs
+- core
+- wifi
+- dns-sd
+- mbedtls
+- http-server
+- rpc-common
+- homekit-adk
+- ota-http-client
+- ota-http-server
+- rpc-service-config
+- rpc-service-fs
+- rpc-service-ota
+- rpc-uart
+- rpc-ws
