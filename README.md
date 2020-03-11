@@ -1,4 +1,4 @@
-# Apple HomeKit firmware for Shelly switches
+# Apple HomeKit firmware for Shelly switches owned by Alban
 
 This firmware exposes Shelly1, SHelly1PM, ShellyPlug-S, Shelly2 and Shelly25 as Apple HomeKit accessories.
 
